@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Búsqueda de Serial Number</title>
+</head>
+<body>
+    <h1>Búsqueda de Serial Number</h1>
+    <form id="buscarForm">
+        <input type="text" id="serialNumber" placeholder="Ingrese el Serial Number">
+        <button type="button" onclick="buscar()">Buscar</button>
+    </form>
+    <p>Computername: <span id="computername"></span></p>
+    <script>
+        function buscar() {
+            const serialNumber = document.getElementById('serialNumber').value;
+            const data = fetch('data.json')
+                .then(response => response.json())
+                .then(json => {
+                    const entry = json.find(item => item.SerialNumber === serialNumber);
+                    if (entry) {
+                        document.getElementById('computername').textContent = entry.Computername;
+                    } else {
+                        document.getElementById('computername').textContent = "No se encontró el Serial Number";
+                    }
+                });
+        }
+    </script>
+</body>
+</html>

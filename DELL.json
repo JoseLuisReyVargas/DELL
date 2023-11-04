@@ -1,0 +1,5 @@
+[
+    { "SerialNumber": "ABC123", "Computername": "Computer1" },
+    { "SerialNumber": "XYZ789", "Computername": "Computer2" },
+    { "SerialNumber": "123456", "Computername": "Computer3" }
+]
