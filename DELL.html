@@ -9,7 +9,7 @@
         <input type="text" id="serialNumber" placeholder="Ingrese el Serial Number">
         <button type="button" onclick="buscar()">Buscar</button>
     </form>
-    <p>Computername: <span id="computername"></span></p>
+    <p>mobilename: <span id="mobilename"></span></p>
     <script>
         function buscar() {
             const serialNumber = document.getElementById('serialNumber').value;
@@ -18,9 +18,9 @@
                 .then(json => {
                     const entry = json.find(item => item.SerialNumber === serialNumber);
                     if (entry) {
-                        document.getElementById('computername').textContent = entry.Computername;
+                        document.getElementById('mobilename').textContent = entry.mobilename;
                     } else {
-                        document.getElementById('computername').textContent = "No se encontró el Serial Number";
+                        document.getElementById('mobilename').textContent = "No se encontró el Serial Number";
                     }
                 });
         }
