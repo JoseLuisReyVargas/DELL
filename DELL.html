@@ -6,17 +6,17 @@
 <body>
     <h1>Búsqueda de Serial Number</h1>
     <form id="buscarForm">
-        <input type="text" id="serialNumber" placeholder="Ingrese el Serial Number">
+        <input type="text" id="SerialNumber" placeholder="Ingrese el Serial Number">
         <button type="button" onclick="buscar()">Buscar</button>
     </form>
     <p>mobilename: <span id="mobilename"></span></p>
     <script>
         function buscar() {
-            const serialNumber = document.getElementById('serialNumber').value;
+            const SerialNumber = document.getElementById('serialNumber').value;
             const data = fetch('DELL.json')
                 .then(response => response.json())
                 .then(json => {
-                    const entry = json.find(item => item.SerialNumber === serialNumber);
+                    const entry = json.find(item => item.SerialNumber === SerialNumber);
                     if (entry) {
                         document.getElementById('mobilename').textContent = entry.mobilename;
                     } else {
