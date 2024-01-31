@@ -12,7 +12,7 @@
     <p>mobilename: <span id="mobilename"></span></p>
     <script>
         function buscar() {
-            const SerialNumber = document.getElementById('serialNumber').value;
+            const SerialNumber = document.getElementById('SerialNumber').value;
             const data = fetch('DELL.json')
                 .then(response => response.json())
                 .then(json => {
