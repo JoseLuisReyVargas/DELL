@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Búsqueda de Serial Number</title>
+</head>
+<body>
+    <h1>Búsqueda de Serial Number</h1>
+    <p>mobilename: <span id="mobilename"></span></p>
+    <script>
+        // Obtener el número de serie de los parámetros de la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const serialNumber = urlParams.get('SerialNumber');
+
+        // Realizar la búsqueda en el archivo JSON
+        fetch('DELL.json')
+            .then(response => response.json())
+            .then(json => {
+                const entry = json.find(item => item.SerialNumber === SerialNumber);
+                if (entry) {
+                    document.getElementById('mobilename').textContent = entry.mobilename;
+                } else {
+                    document.getElementById('mobilename').textContent = "No se encontró el Serial Number";
+                }
+            });
+    </script>
+</body>
+</html>
