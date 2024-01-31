@@ -14,13 +14,13 @@
         }
 
         // Obtener el número de serie de la URL
-        const Serial = getParameterByName('SerialNumber');
+        const serialNumber = getParameterByName('SerialNumber');
 
         // Realizar la búsqueda en el archivo JSON
         fetch('DELL.json')
             .then(response => response.json())
             .then(json => {
-                const entry = json.find(item => item.Serial === SerialNumber);
+                const entry = json.find(item => item.Serial === serialNumber);
                 if (entry) {
                     document.getElementById('mobilename').textContent = entry.mobilename;
                 } else {
