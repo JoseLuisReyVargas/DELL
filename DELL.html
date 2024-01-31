@@ -13,7 +13,7 @@
     <script>
         function buscar() {
             const serialNumber = document.getElementById('serialNumber').value;
-            const data = fetch('data.json')
+            const data = fetch('DELL.json')
                 .then(response => response.json())
                 .then(json => {
                     const entry = json.find(item => item.SerialNumber === serialNumber);
