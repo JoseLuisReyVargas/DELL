@@ -7,9 +7,14 @@
     <h1>Búsqueda de Serial Number</h1>
     <p>mobilename: <span id="mobilename"></span></p>
     <script>
-        // Obtener el número de serie de los parámetros de la URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const serialNumber = urlParams.get('SerialNumber');
+        // Función para obtener el valor de un parámetro de la URL
+        function getParameterByName(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        // Obtener el número de serie de la URL
+        const serialNumber = getParameterByName('SerialNumber');
 
         // Realizar la búsqueda en el archivo JSON
         fetch('DELL.json')
